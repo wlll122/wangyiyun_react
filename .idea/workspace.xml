@@ -2,13 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9dfe6a46-f15d-4b49-ab8a-f5b658e91e45" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/component/src/02_组件得生命周期/App.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/component/src/02_组件得生命周期/生命周期.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/component/src/03_组件之间得通信/02_父传子_类组件.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/component/src/03_组件之间得通信/组件间嵌套.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/component/src/03_组件之间得通信/03_父传子_函数组件.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/component/src/03_组件之间得通信/04_父传子属性验证.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/component/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/component/.eslintcache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/component/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/src/01_组件定义方式/render返回值.js" beforeDir="false" afterPath="$PROJECT_DIR$/component/src/01_组件定义方式/render返回值.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/component/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/component/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/component/src/03_组件之间得通信/02_父传子_类组件.js" beforeDir="false" afterPath="$PROJECT_DIR$/component/src/03_组件之间得通信/02_父传子_类组件.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/component/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/component/src/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -58,6 +57,8 @@
       <option name="presentableId" value="Default" />
       <updated>1607347347640</updated>
       <workItem from="1607347348965" duration="4911000" />
+      <workItem from="1607389900372" duration="19000" />
+      <workItem from="1607435532886" duration="2547000" />
     </task>
     <servers />
   </component>
@@ -74,5 +75,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
