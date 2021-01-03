@@ -1,0 +1,24 @@
+.nav-bar{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.nav-left{
+    width: 70px;
+    height: 50px;
+
+    border: 1px solid red;
+}
+.nav-center{
+    flex: 1;
+    border: 1px solid red;
+    height: 50px;
+}
+.nav-right{
+    width: 70px;
+    height: 50px;
+
+    border: 1px solid red;
+}
