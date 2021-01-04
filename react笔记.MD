@@ -282,4 +282,120 @@ class NavBar2 extends Component {
 }
 ```
 ### 跨组件通信
++ 使用props实现逐层传递
+```
+import React,{Component} from 'react'
 
+function ProfileName(props) {
+    return (
+        <div>
+            <h2>用户昵称:{props.nickName}</h2>
+            <h2>用户等级: {props.level}</h2>
+        </div>
+    )
+}
+//
+function Profile (props){
+    return (
+    <div>
+        {/* <ProfileName nickName = {props.nickName} level = {props.level}/> */}
+        {props.nickName} {props.level}
+        {/* 属性展开 */}
+        <ProfileName {...props}/>
+        <ul>
+            <li>设置1</li>
+            <li>设置2</li>
+            <li>设置3</li>
+            <li>设置4</li>
+        </ul>
+    </div>
+    )
+}
+export default class App extends Component{
+    constructor(props){
+        super(props);
+        this.state = {
+            nickName:'李四',
+            level:99
+        }
+    }
+    render() {
+        const {nickName,level} = this.state
+        return(
+            <div>
+                我是App组件
+                <h2>是我 {nickName} </h2>
+                <Profile nickName={nickName} level= {level} />
+            </div>
+        )
+    }
+}
+```
++ 使用context实现
+1. 创建context对象
+可以定义默认值等
+```
+const userContext = React.createContext({
+  nickName: "aaaaa",
+  level: 99,
+});
+```
+2. 在父组件使用userContent 包裹组件
+```
+  render() {
+    return (
+      <div>
+        我是App组件
+        {/* 2.包裹组件 */}
+        <userContext.Provider value={this.state}>
+          {/* 把父组件放到这个组件内部 */}
+          <Profile />
+        </userContext.Provider>
+      </div>
+    );
+  }
+```
+3. 绑定并获取数据,只有是类组件时定义
+userContext 是之前所定义的
+```
+ ProfileName.contextType = userContext;
+```
+4. 进行数据展示
+```
+ return (
+      <div>
+          {/* 4.0展示数据 */}
+        <h2>用户昵称:{this.context.nickName}</h2>
+        <h2>用户等级: {this.context.level} </h2>
+      </div>
+     );
+```
+### 为什么使用setState 
+在组件得生命周期或者react合成事件中,setState时异步的
+在setTimeout 或者原生dom事件中,setState是同步的
+ 1.提升性能,如果每次调用setState都更新render页面,函数会被频繁调用,界面
+重新渲染,效率极低,可以获取到多个更新,进行批量更新
+2.如果同步更新了state,但是没有更新render函数,会使得state与props
+不能保持同步,产生问题.
+
+#### 自动决定数据更新时是否执行render函数
+
++ 使用PureComponent 
+1. 引入PureComponent,将定义的类组件使用PureComponent来进行继承
+```
+class Banner extends PureComponent{
+    render(h) {
+        console.log("banner被调用");
+        return(
+            <h4>我是轮播图</h4>
+        )   
+       }
+}
+```
+2. 使用memo包裹函数式组件
+```
+const MemoHeader = memo(function Header() {
+  console.log("header被调用");
+  return <div>我是header组件</div>;
+});
+```
