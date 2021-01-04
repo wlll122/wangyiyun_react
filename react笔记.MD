@@ -282,3 +282,4 @@ class NavBar2 extends Component {
 }
 ```
 ### 跨组件通信
+
